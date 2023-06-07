@@ -5,7 +5,9 @@
 </template>
 
 <script lang='ts' setup>
-
+defineOptions({
+  name:'header-bar'
+})
 </script>
 
 <style scoped lang='scss'>

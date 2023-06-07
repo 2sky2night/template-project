@@ -5,7 +5,9 @@
 </template>
 
 <script lang='ts' setup>
-
+defineOptions({
+  name:'main-container'
+})
 </script>
 
 <style scoped lang='scss'>

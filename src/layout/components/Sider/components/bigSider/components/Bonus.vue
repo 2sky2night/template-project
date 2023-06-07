@@ -1,5 +1,5 @@
 <template>
-  <div class="bonus-container">
+  <div class="bonus-container mb-15">
     <NavCard icon="icon-archive" title="Bonus" />
     <div class="nav-btns mt-5">
       <div class="nav-btn mr-10">

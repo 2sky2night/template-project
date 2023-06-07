@@ -1,5 +1,5 @@
 <template>
-  <a-button class="menu-btns" size="large">
+  <a-button class="menu-btn" size="large">
     <template #icon>
       <icon-menu />
     </template>

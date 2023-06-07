@@ -1,9 +1,10 @@
+<!--无子孩子的导航菜单-->
 <template>
   <div class="nav-card-container">
     <div class="icon-container mr-10" v-if="icon">
-      <component :is="icon" size="30"></component>
+      <component :is="icon" size="25"></component>
     </div>
-    <div class="title ml-5">{{ title }}</div>
+    <div class="nav-title ml-5">{{ title }}</div>
   </div>
 </template>
 

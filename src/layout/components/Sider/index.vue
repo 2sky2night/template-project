@@ -1,6 +1,8 @@
 <template>
   <div class="sider-container">
-    <BigSider/>
+    <Transition>
+      <BigSider/>
+    </Transition>
   </div>
 </template>
 
@@ -8,6 +10,9 @@
 import BigSider from './components/bigSider/index.vue'
 import SmallSider from './components/smallSider/index.vue'
 
+defineOptions({
+  name:'sider-bar'
+})
 </script>
 
 <style scoped lang='scss'>
