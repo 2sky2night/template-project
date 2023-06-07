@@ -13,7 +13,7 @@ defineOptions({
 <style scoped lang='scss'>
 .header-container{
   height: var(--header-height);
-  box-shadow:0 3px 10px var(--shadow-color);
+  box-shadow:0 0px 10px var(--shadow-color);
 }
 
 </style>

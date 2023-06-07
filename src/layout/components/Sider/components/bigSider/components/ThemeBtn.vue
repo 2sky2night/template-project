@@ -2,13 +2,13 @@
   <div class="theme-btns">
 
     <!--深色模式的按钮-->
-    <div class="btn" @click="() => themeStore.toggleTheme(true)" :class="{ active: isDark }">
+    <div class="btn" @click="() => settingStore.toggleTheme(true)" :class="{ active: isDark }">
       <icon-moon-fill size="20" />
       <span class="title ml-10">Dark</span>
     </div>
 
     <!--浅色模式的按钮-->
-    <div class="btn" @click="() => themeStore.toggleTheme(false)" :class="{ active: !isDark }">
+    <div class="btn" @click="() => settingStore.toggleTheme(false)" :class="{ active: !isDark }">
       <icon-sun-fill size="20" />
       <span class="title ml-10">Light</span>
     </div>
@@ -21,11 +21,11 @@
 
 <script lang='ts' setup>
 // hooks
-import useThemeStore from '@/store/theme';
+import useSettingStore from '@/store/setting';
 import { storeToRefs } from 'pinia';
 
-const themeStore = useThemeStore()
-const { isDark } = storeToRefs(themeStore)
+const settingStore = useSettingStore()
+const { isDark } = storeToRefs(settingStore)
 
 </script>
 

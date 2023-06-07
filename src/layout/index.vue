@@ -25,6 +25,7 @@ defineOptions({
   display: flex;
   .center-container{
     flex-grow: 1;
+    transition: var(--time-normal);
   }
 }
 </style>

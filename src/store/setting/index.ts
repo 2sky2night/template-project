@@ -1,9 +1,12 @@
 import { defineStore } from 'pinia'
 import { ref, watch } from 'vue'
 
-const useThemeStore = defineStore(
+const useSettingStore = defineStore(
   'theme',
   () => {
+
+    // 是否展开菜单 1大菜单 2小菜单 0隐藏所有菜单
+    const isBigSider = ref<0 | 1 | 2>(0)
 
     // 是否为深色模式
     const isDark = ref(true)
@@ -14,6 +17,14 @@ const useThemeStore = defineStore(
      */
     function toggleTheme (value: boolean) {
       isDark.value = value
+    }
+
+    /**
+     * 切换菜单显示样式 1大菜单 2小菜单 0隐藏所有菜单
+     * @param value 
+     */
+    function toggleSider (value: 0 | 1 | 2) {
+      isBigSider.value = value
     }
 
     // 监听主题的变化
@@ -28,7 +39,7 @@ const useThemeStore = defineStore(
         setLightCSSVar()
       }
     }, {
-      immediate:true
+      immediate: true
     })
 
     /**
@@ -57,7 +68,9 @@ const useThemeStore = defineStore(
 
     return {
       isDark,
-      toggleTheme
+      isBigSider,
+      toggleTheme,
+      toggleSider
     }
   },
   {
@@ -65,4 +78,4 @@ const useThemeStore = defineStore(
   }
 )
 
-export default useThemeStore
+export default useSettingStore

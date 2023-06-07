@@ -12,7 +12,7 @@
         <div class="img-container mr-5">
           <img class="spin" src="https://bc.game/assets/turntable.b21b0d0a.png">
           <img class="pointer" src="https://bc.game/assets/pointer.fe72597d.png
-  ">
+          ">
         </div>
         <span class="bonus-title">SPIN</span>
       </div>
@@ -21,6 +21,7 @@
 </template>
 
 <script lang='ts' setup>
+// 组件
 import NavCard from '@/components/card/NavCard.vue';
 </script>
 
@@ -46,6 +47,7 @@ import NavCard from '@/components/card/NavCard.vue';
       cursor: pointer;
       align-items: center;
       padding: 3px 10px;
+      border-radius: 5px;
 
       .bonus-title {
         font-size: 12px;
@@ -62,13 +64,13 @@ import NavCard from '@/components/card/NavCard.vue';
 
       // quest
       &:first-child {
-        background-image: linear-gradient(50deg, #b596fc, #f0eef9);
+        background-image: linear-gradient(50deg, #b596fc, #eee);
       }
 
       // spin
       &:last-child {
         position: relative;
-        background-image: linear-gradient(50deg, #d389c1, #f0eef9);
+        background-image: linear-gradient(50deg, #d389c1, #eee);
 
         .spin {
           animation: toRotate 2s infinite linear;
@@ -77,7 +79,7 @@ import NavCard from '@/components/card/NavCard.vue';
         .pointer {
           position: absolute;
           width: 15px;
-          top:0px;
+          top: 0px;
           left: 20px;
         }
       }
@@ -93,4 +95,5 @@ import NavCard from '@/components/card/NavCard.vue';
   to {
     transform: rotate(360deg);
   }
-}</style>
+}
+</style>

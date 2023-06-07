@@ -1,22 +1,61 @@
 <template>
-  <div class="sider-container">
-    <Transition>
-      <BigSider/>
-    </Transition>
+  <div class="sider-container" :class="{ 'sider-big': isBigSider === 1, 'sider-small': isBigSider === 2 }">
+    <TransitionGroup name="sider">
+      <BigSider v-if="isBigSider === 1" key="big" />
+      <SmallSider v-if="isBigSider === 2" key="small" />
+    </TransitionGroup>
   </div>
 </template>
 
 <script lang='ts' setup>
+// 组件
 import BigSider from './components/bigSider/index.vue'
 import SmallSider from './components/smallSider/index.vue'
+// hooks
+import useSettingStore from '@/store/setting';
+import { storeToRefs } from 'pinia';
+
+const settingStore = useSettingStore()
+const { isBigSider } = storeToRefs(settingStore)
+
 
 defineOptions({
-  name:'sider-bar'
+  name: 'sider-bar'
 })
 </script>
 
 <style scoped lang='scss'>
-.sider-container{
-  
+// 侧边栏容器
+.sider-container {
+  position: relative;
+  height: 100%;
+  box-shadow: 0 0 10px var(--shadow-color);
+  // 大侧边栏生效时的样式
+  &.sider-big {
+    width: var(--sider-width);
+  }
+
+  // 小侧边栏生效时的样式
+  &.sider-small {
+    width: var(--sider-small-width);
+  }
+}
+
+.sider-enter-active {
+  animation: siderBar var(--time-normal) 1 ease-in-out;
+}
+
+.sider-leave-active {
+  animation: siderBar var(--time-normal) 1 ease-in-out reverse;
+}
+
+@keyframes siderBar {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: none;
+  }
 }
 </style>

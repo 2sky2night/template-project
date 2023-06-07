@@ -19,7 +19,7 @@ import { title } from '@/config';
   height: var(--sider-logo-height);
   display: flex;
   align-items: center;
-  box-shadow: 0px 3px 10px var(--shadow-color);
+  box-shadow: 0px -3px 10px var(--shadow-color);
   box-sizing: border-box;
   padding: 10px;
   .menu-btn:hover{

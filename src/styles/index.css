@@ -2,8 +2,10 @@
   --text-color: black;
   --primary-color: red;
 
-  /*大侧边栏高度*/
+  /*大侧边栏宽度*/
   --sider-width: 260px;
+  /*小侧边栏的宽度*/
+  --sider-small-width:65px;
   /*侧边栏logo组件的高度*/
   --sider-logo-height: 60px;
   /*导航栏高度*/
