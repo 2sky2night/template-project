@@ -13,13 +13,9 @@ import { initRoutes } from '@/router/routes';
 import NavigateItems from './NavigateItems.vue';
 // hooks
 import { useRoute } from 'vue-router';
-import { computed } from 'vue'
 
 
 const $route = useRoute()
-const pathArray = computed(() => {
-  return $route.matched.map(ele => ele.path)
-})
 
 </script>
 

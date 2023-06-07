@@ -27,7 +27,7 @@ import NavCard from '@/components/card/NavCard.vue';
 <style scoped lang='scss'>
 .bonus-container {
   height: 110px;
-  background-color: var(--box-bg-light);
+  background-color: var(--color-bg-2);
   box-sizing: border-box;
   padding: 10px;
   display: flex;

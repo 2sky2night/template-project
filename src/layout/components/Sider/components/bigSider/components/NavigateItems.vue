@@ -6,8 +6,8 @@
       <template #icon>
         <component size="25" v-if="route.meta" :is="route.meta.icon"></component>
       </template>
-      <span v-if="route.meta">{{ route.meta.title }}</span>
-      <span v-else>{{ route.path }}</span>
+      <span v-if="route.meta" class="nav-title">{{ route.meta.title }}</span>
+      <span v-else class="nav-title">{{ route.path }}</span>
 
     </a-menu-item>
 
@@ -20,8 +20,8 @@
           <component size="25" v-if="route.meta" :is="route.meta.icon"></component>
         </template>
         <template #title>
-          <span v-if="route.meta">{{ route.meta.title }}</span>
-          <span v-else>{{ route.path }}</span>
+          <span v-if="route.meta" class="nav-title">{{ route.meta.title }}</span>
+          <span v-else class="nav-title">{{ route.path }}</span>
         </template>
         <a-menu mode="pop" :selected-keys="[$route.path]">
           <NavigateItems :routes="route.children" />
@@ -34,8 +34,8 @@
           <component size="25" v-if="route.meta" :is="route.meta.icon"></component>
         </template>
         <template #title>
-          <span v-if="route.meta">{{ route.meta.title }}</span>
-          <span v-else>{{ route.path }}</span>
+          <span v-if="route.meta" class="nav-title">{{ route.meta.title }}</span>
+          <span v-else class="nav-title">{{ route.path }}</span>
         </template>
         <NavigateItems :routes="route.children" />
       </a-sub-menu>
@@ -50,14 +50,10 @@
 import type { RouteRecordRaw } from 'vue-router';
 // hooks
 import { useRoute, useRouter } from 'vue-router';
-import { computed } from 'vue'
+
 
 const $route = useRoute()
 const $router = useRouter()
-const pathArray = computed(() => {
-  return $route.matched.map(ele => ele.path)
-})
-
 
 function navigateTo (path: string) {
   $router.push(path)
@@ -69,4 +65,8 @@ defineProps<{
 
 </script>
 
-<style scoped lang='scss'></style>
+<style scoped lang='scss'>
+.nav-title{
+  font-size: 15px;
+}
+</style>

@@ -8,6 +8,7 @@
       <!--导航栏-->
       <Navigations/>
       <!--主题切换按钮组-->
+      <ThemeBtn/>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@
 import Logo from './components/Logo.vue';
 import Bonus from './components/Bonus.vue';
 import Navigations from './components/Navigations.vue';
+import ThemeBtn from './components/ThemeBtn.vue';
 defineOptions({
   name:'BigSider'
 })
@@ -28,7 +30,7 @@ defineOptions({
   width: var(--sider-width);
   display: flex;
   flex-direction: column;
-  box-shadow:5px 3px 10px var(--shadow-color);
+  box-shadow:0 0 10px var(--shadow-color);
   // 隐藏滚动条
   &::-webkit-scrollbar{
     width: 0;

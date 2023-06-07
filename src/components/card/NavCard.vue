@@ -19,7 +19,8 @@ const props = defineProps<NavCardProps>()
   align-items: center;
   background-color: var(--box-bg-light);
   color: var(--color-text-3);
-  padding: 8px 20px;
+  padding: 8px 10px;
+  font-size: 15px;
   transition: var(--time-normal);
   cursor: pointer;
   &:hover{
