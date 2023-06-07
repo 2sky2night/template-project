@@ -4,6 +4,16 @@ $primary-color:red;
 // 侧边栏高度
 $sider-width:260px;
 // 侧边栏logo组件的高度
-$sider-logo-height:65px;
+$sider-logo-height:60px;
 // 导航栏高度
 $header-height:60px;
+
+// 阴影颜色
+$shadow-color:#ededed;
+// 边框颜色
+$border-color:#eee;
+
+//导出的scss变量
+:export {
+
+}

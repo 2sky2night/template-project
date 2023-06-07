@@ -9,8 +9,8 @@ import '@/styles/reset.scss'
 import ArcoVue from '@arco-design/web-vue';
 import ArcoVueIcon from '@arco-design/web-vue/es/icon';
 import '@arco-design/web-vue/dist/arco.css';
-// rem适配插件
-import 'lib-flexible/flexible'
+// 主样式
+import '@/styles/index.css'
 const plugins: Plugin = {
   install (app) {
     app.use(router)

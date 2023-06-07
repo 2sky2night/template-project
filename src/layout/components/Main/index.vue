@@ -10,9 +10,8 @@
 
 <style scoped lang='scss'>
 .main-container{
-  height: calc(100% - $header-height);
+  height: calc(100% - var(--header-height));
   overflow:auto;
-  background-color: yellow;
   // 隐藏滚动条
   &::-webkit-scrollbar{
     width: 0;

@@ -1,10 +1,6 @@
 <template>
   <div class="logo-container">
-    <a-button class="menu-btns">
-      <template #icon>
-        <icon-menu />
-      </template>
-    </a-button>
+    <MenuBtn />
     <div class="logo-box">
       <icon-face-smile-fill />
       <span class="title">{{ title }}</span>
@@ -13,28 +9,29 @@
 </template>
 
 <script lang='ts' setup>
+//@ts-ignore
+import MenuBtn from '@/layout/components/Sider/components/common/MenuBtn.vue'
 import { title } from '@/config';
 </script>
 
 <style scoped lang='scss'>
-.logo-container{
-  height: $sider-logo-height;
+.logo-container {
+  height: var(--sider-logo-height);
   display: flex;
   align-items: center;
-  // 菜单按钮
-  .menu-btns{
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-  }
+  box-shadow: 0px 3px 10px var(--shadow-color);
+  box-sizing: border-box;
+  padding: 10px;
+
   // 标题
-  .logo-box{
+  .logo-box {
     font-size: 20px;
     margin-left: 20px;
-    .title{
+
+    .title {
+      font-weight: 600;
       margin-left: 10px;
     }
   }
 }
-
 </style>

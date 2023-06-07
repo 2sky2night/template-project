@@ -12,14 +12,7 @@ module.exports = {
     open: true
   },
   // 第三方插件配置
-  pluginOptions: {
-    'postcss-pxtorem': {
-      rootValue: 192,  //结果为：设计稿元素尺寸/10，
-      propList: ['*'],
-      exclude: function (file) { console.log(file) 
-        return file.indexOf('screen') === -1; }//判断哪个文件需要px转换rem
-    }
-  },
+  pluginOptions: {},
   css: {
     loaderOptions: {
       sass: {

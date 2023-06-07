@@ -1,0 +1,29 @@
+<template>
+  <div class="nav-card-container">
+    <div class="icon-container mr-10" v-if="icon">
+      <component :is="icon" size="30"></component>
+    </div>
+    <div class="title ml-5">{{ title }}</div>
+  </div>
+</template>
+
+<script lang='ts' setup >
+import type NavCardProps from '@/types/components/card/NavCard'
+const props = defineProps<NavCardProps>()
+</script>
+
+<style scoped lang='scss'>
+.nav-card-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--box-bg-light);
+  color: var(--color-text-3);
+  padding: 8px 20px;
+  transition: var(--time-normal);
+  cursor: pointer;
+  &:hover{
+    background-color: var(--box-bg-light-hover);
+    color:var(--color-text-1)
+  }
+}
+</style>

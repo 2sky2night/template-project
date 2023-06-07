@@ -10,8 +10,8 @@
 
 <style scoped lang='scss'>
 .header-container{
-  height: $header-height;
-  background-color: pink;
+  height: var(--header-height);
+  box-shadow:0 3px 10px var(--shadow-color);
 }
 
 </style>
