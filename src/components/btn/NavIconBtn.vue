@@ -38,7 +38,7 @@ const isActive = computed(() => {
   padding: 10px 0;
   // 锚链接字体颜色
   a {
-    color: var(--color-text-2);
+    color: var(--color-text-3);
   }
 
   .main-container {
