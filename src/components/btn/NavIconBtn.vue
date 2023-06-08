@@ -3,7 +3,7 @@
     <div @click="navigateTo" class="main-container">
       <component :is="icon" size="28"></component>
     </div>
-    <div class="title-container">{{ title }}</div>
+    <div v-if="title" class="title-container">{{ title }}</div>
   </div>
 </template>
 

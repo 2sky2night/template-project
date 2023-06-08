@@ -1,6 +1,7 @@
 <template>
   <div class="navigations-container">
-    <NavBtn v-for=" item  in list" :key="item.path" :icon="item.icon" :title="item.title" :path="item.path" class="mr-10" />
+    <NavBtn v-for="  item   in list" :key="item.path" :icon="item.icon" :title="item.title" :path="item.path"
+      class="mr-10" />
   </div>
 </template>
 
@@ -15,5 +16,12 @@ const list = [
 <style scoped lang='scss'>
 .navigations-container {
   display: flex;
+}
+
+// 700px以下隐藏导航按钮组
+@media screen and (max-width:700px) {
+  .navigations-container {
+    display: none;
+  }
 }
 </style>

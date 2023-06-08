@@ -48,6 +48,7 @@ defineOptions({
   left: var(--sider-width);
   right: 0;
   bottom: 0;
+  z-index: 1000;
   background-color: var(--mask-color);
   display: none;
 }

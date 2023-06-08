@@ -31,6 +31,7 @@ defineOptions({
   .center-container {
     flex-grow: 1;
     transition: var(--time-normal);
+    height: 100%;
 
     .header-content {
       height: var(--header-height);

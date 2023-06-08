@@ -13,10 +13,11 @@ defineOptions({
 <style scoped lang='scss'>
 .main-container {
   padding: 0 40px;
+  box-sizing: border-box;
 }
 
-// 1500px以上 main居中显示
-@media screen and (min-width:1500px) {
+// 1690px以上 main居中显示
+@media screen and (min-width:1690px) {
   .main-container {
     width: var(--main-width);
     margin: 0 auto;
