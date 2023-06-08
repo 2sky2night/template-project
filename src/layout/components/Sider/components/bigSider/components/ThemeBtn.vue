@@ -42,7 +42,7 @@ const { isDark } = storeToRefs(settingStore)
     width: 120px;
     height: 45px;
     left: 0px;
-    background-color: var(--box-bg-light-hover);
+    background-color: var(--box-bg-color-hover-2);
   }
 
   .btn {

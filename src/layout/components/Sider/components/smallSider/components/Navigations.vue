@@ -1,15 +1,18 @@
 <template>
   <ul class="navigations-container">
-    <li class="navigation-item" v-for=" route  in initRoutes" :key="route.path">
-      <RouterLink active-class="active" :to="route.path">
-        <component size="30" :is="route.meta?.icon"></component>
-      </RouterLink>
+    <li class="navigation-item" v-for="      route       in initRoutes" :key="route.path">
+      <template v-if="route.meta">
+        <NavIconBtn class="mt-5" :icon="route.meta.icon" :title="route.meta.title" :path="route.path"></NavIconBtn>
+      </template>
     </li>
   </ul>
 </template>
 
 <script lang='ts' setup>
+// 路由表
 import { initRoutes } from '@/router/routes';
+// 组件
+import NavIconBtn from '@/components/btn/NavIconBtn.vue';
 
 </script>
 
@@ -17,15 +20,7 @@ import { initRoutes } from '@/router/routes';
 .navigations-container {
   margin: 10px 0;
   .navigation-item{
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    a {
-      color: var(--color-text-4);
-      &.active{
-        color:var(--color-text-1)
-      }
-    }
+    margin: 0 8px;
   }
 }
 </style>

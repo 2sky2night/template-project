@@ -2,8 +2,12 @@
   <div class="layout-container">
     <Sider />
     <div class="center-container">
-      <Header />
-      <Main />
+      <div class="header-content">
+        <Header />
+      </div>
+      <div class="main-content">
+        <Main />
+      </div>
     </div>
   </div>
 </template>
@@ -23,9 +27,25 @@ defineOptions({
   height: 100vh;
   width: 100vw;
   display: flex;
-  .center-container{
+
+  .center-container {
     flex-grow: 1;
     transition: var(--time-normal);
+
+    .header-content {
+      height: var(--header-height);
+      box-shadow: 0 0px 10px var(--shadow-color);
+    }
+
+    .main-content {
+      height: calc(100% - var(--header-height));
+      overflow: auto;
+
+      // 隐藏滚动条
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
   }
 }
 </style>

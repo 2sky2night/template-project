@@ -6,17 +6,20 @@
 
 <script lang='ts' setup>
 defineOptions({
-  name:'main-container'
+  name: 'main-container'
 })
 </script>
 
 <style scoped lang='scss'>
-.main-container{
-  height: calc(100% - var(--header-height));
-  overflow:auto;
-  // 隐藏滚动条
-  &::-webkit-scrollbar{
-    width: 0;
+.main-container {
+  padding: 0 40px;
+}
+
+// 1500px以上 main居中显示
+@media screen and (min-width:1500px) {
+  .main-container {
+    width: var(--main-width);
+    margin: 0 auto;
   }
 }
 </style>

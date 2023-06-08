@@ -17,15 +17,16 @@ const props = defineProps<NavCardProps>()
 .nav-card-container {
   display: flex;
   align-items: center;
-  background-color: var(--box-bg-light);
+  background-color: var(--box-bg-color-2);
   color: var(--color-text-3);
   padding: 8px 10px;
   font-size: 15px;
   transition: var(--time-normal);
   cursor: pointer;
-  &:hover{
-    background-color: var(--box-bg-light-hover);
-    color:var(--color-text-1)
+
+  &:hover {
+    background-color: var(--box-bg-color-hover-2);
+    color: var(--color-text-1)
   }
 }
 </style>

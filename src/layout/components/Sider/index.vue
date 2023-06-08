@@ -33,13 +33,13 @@ defineOptions({
 
   // 大侧边栏生效时的样式
   &.sider-big {
-    width: var(--sider-width);
+    min-width: var(--sider-width);
     box-shadow: none;
   }
 
   // 小侧边栏生效时的样式
   &.sider-small {
-    width: var(--sider-small-width);
+    min-width: var(--sider-small-width);
   }
 }
 

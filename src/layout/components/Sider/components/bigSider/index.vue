@@ -9,7 +9,7 @@
       <Navigations />
       <!--主题切换按钮组-->
       <ThemeBtn />
-      <!--1200px以下显示该大菜单时出现的遮罩层-->
+      <!--1200px--650px显示该大菜单时出现的遮罩层-->
       <div class="big-sider-container-mask" @click="toCloseBigSider">
       </div>
 
