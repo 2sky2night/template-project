@@ -20,12 +20,12 @@
   --shadow-color: #ededed;
   /*边框颜色*/
   --border-color: #eee;
-
+  /*遮罩层的颜色*/
+  --mask-color:#000000b3;
   /*盒子颜色*/
   --box-bg-light:#f6f7fa;
   /*鼠标悬浮盒子颜色*/
   --box-bg-light-hover:#eaecf3;
-
 }
 
 .ml-10{

@@ -5,7 +5,7 @@ const useSettingStore = defineStore(
   'theme',
   () => {
 
-    // 是否展开菜单 1大菜单 2小菜单 0隐藏所有菜单
+    // 是否展开菜单  1大菜单 2小菜单 0隐藏所有菜单 (1200像素下显示浮动大菜单)
     const isBigSider = ref<0 | 1 | 2>(0)
 
     // 是否为深色模式
@@ -52,6 +52,7 @@ const useSettingStore = defineStore(
       html.style.setProperty('--border-color', '#eee')
       html.style.setProperty('--box-bg-light', '#f6f7fa')
       html.style.setProperty('--box-bg-light-hover', '#eaecf3')
+      html.style.setProperty('--mask-color', '#00000052')
     }
 
     /**

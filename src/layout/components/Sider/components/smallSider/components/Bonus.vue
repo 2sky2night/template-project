@@ -1,6 +1,8 @@
 <template>
   <div class="bonus-container">
-    
+    <div class="bonus">
+      
+    </div>
   </div>
 </template>
 
