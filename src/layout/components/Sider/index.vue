@@ -45,13 +45,18 @@ defineOptions({
 
 // 1200px以下侧边栏宽度为小菜单的宽度
 @media screen and (max-width:1200px) {
-  .sider-container{
-    width: var(--sider-small-width) !important;
+  .sider-container {
+    width: var(--sider-small-width);
+
+    &.sider-big {
+      min-width: var(--sider-small-width) ;
+    }
   }
 }
+
 // 650px以下隐藏整个侧边菜单栏
 @media screen and (max-width:650px) {
-  .sider-container{
+  .sider-container {
     display: none;
   }
 }

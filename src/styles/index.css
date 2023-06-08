@@ -11,7 +11,7 @@
   /*导航栏高度*/
   --header-height: 60px;
   /*1690px以上大屏模式主视图的宽度*/
-  --main-width:1430px;
+  --main-width: 1430px;
 
   /*过渡时间*/
   --time-normal: .3s;
@@ -32,6 +32,10 @@
   --box-bg-color-2: #f6f7fa;
   /*盒子2鼠标悬浮时的背景颜色*/
   --box-bg-color-hover-2: #eaecf3;
+}
+
+* {
+  text-decoration: none;
 }
 
 .ml-10 {

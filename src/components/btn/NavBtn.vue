@@ -1,9 +1,11 @@
 <template>
-  <div class="nav-btn" @click="navigateTo" :class="{ active: isActive }">
-    <span class="icon-contianer" v-if="icon">
-      <component size="20" :is="icon"></component>
-    </span>
-    <span class="ml-10">{{ title }}</span>
+  <div class="nav-btn" :class="{ active: isActive }">
+    <RouterLink :to="path">
+      <span class="icon-contianer" v-if="icon">
+        <component size="20" :is="icon"></component>
+      </span>
+      <span class="ml-10">{{ title }}</span>
+    </RouterLink>
   </div>
 </template>
 
@@ -15,7 +17,6 @@ import { useRoute, useRouter } from 'vue-router';
 import { computed } from 'vue';
 
 const $route = useRoute()
-const $router = useRouter()
 const props = defineProps<NavBtnProps>()
 
 const isActive = computed(() => {
@@ -27,12 +28,6 @@ const isActive = computed(() => {
   })
 })
 
-/**
- * 修改路由路径切换路由组件
- */
-function navigateTo () {
-  $router.push(props.path)
-}
 
 </script>
 
@@ -46,13 +41,16 @@ function navigateTo () {
   border-radius: 5px;
   align-items: center;
 
-  &:hover {
-    color: var(--color-text-1);
-    background-color: var(--box-bg-color-hover-1);
+  a {
+    color: var(--color-text-4);
   }
 
+  &:hover,
   &.active {
-    color: var(--color-text-1);
+    a {
+      color: var(--color-text-1);
+    }
+
     background-color: var(--box-bg-color-hover-1);
   }
 }

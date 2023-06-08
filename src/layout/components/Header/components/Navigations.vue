@@ -8,8 +8,8 @@
 <script lang='ts' setup>
 import NavBtn from '@/components/btn/NavBtn.vue';
 const list = [
+  { icon: 'icon-home', title: 'Home', path: '/' },
   { icon: 'icon-live-broadcast', title: 'Blog', path: '/blog' },
-  { icon: 'icon-live-broadcast', title: 'Home', path: '/' },
 ]
 </script>
 

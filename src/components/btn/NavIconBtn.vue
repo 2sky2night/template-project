@@ -1,9 +1,11 @@
 <template>
   <div class="nav-icon-btn" :class="{ active: isActive }">
-    <div @click="navigateTo" class="main-container">
-      <component :is="icon" size="28"></component>
-    </div>
-    <div v-if="title" class="title-container">{{ title }}</div>
+    <RouterLink :to="path">
+      <div class="main-container">
+        <component :is="icon" size="28"></component>
+      </div>
+      <div v-if="title" class="title-container">{{ title }}</div>
+    </RouterLink>
   </div>
 </template>
 
@@ -11,11 +13,11 @@
 // types
 import type NavIconBtnProps from '@/types/components/btn/NavIconBtn';
 // hooks
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 import { computed } from 'vue'
 
 const props = defineProps<NavIconBtnProps>()
-const router = useRouter()
+
 const route = useRoute()
 
 // 是否激活了路由
@@ -27,12 +29,6 @@ const isActive = computed(() => {
   })
 })
 
-/**
- * 导航到对应路由中去
- */
-function navigateTo () {
-  router.push(props.path)
-}
 
 </script>
 
@@ -40,7 +36,10 @@ function navigateTo () {
 .nav-icon-btn {
   position: relative;
   padding: 10px 0;
-  color: var(--color-text-2);
+  // 锚链接字体颜色
+  a {
+    color: var(--color-text-2);
+  }
 
   .main-container {
     cursor: pointer;
@@ -70,14 +69,16 @@ function navigateTo () {
       height: 10px;
       left: -5px;
       background-color: var(--color-bg-4);
-
     }
   }
 
   // 悬浮和激活时的样式
   &.active,
   &:hover {
-    color: var(--color-text-1);
+    a {
+      color: var(--color-text-1);
+    }
+
     background-color: var(--color-bg-3);
   }
 

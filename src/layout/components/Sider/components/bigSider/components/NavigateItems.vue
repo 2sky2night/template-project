@@ -1,5 +1,5 @@
 <template>
-  <template v-for="           route            in routes">
+  <template v-for="            route             in routes">
 
     <!--无子孩子-->
     <a-menu-item @click="() => navigateTo(route.path)" style="height: 42px;" v-if="!route.children" :key="route.path">
@@ -23,7 +23,7 @@
           <span v-if="route.meta" class="nav-title">{{ route.meta.title }}</span>
           <span v-else class="nav-title">{{ route.path }}</span>
         </template>
-        <a-menu mode="pop" :selected-keys="[$route.path]">
+        <a-menu mode="pop" :selected-keys="[ $route.path ]">
           <NavigateItems :routes="route.children" />
         </a-menu>
       </a-sub-menu>
@@ -66,7 +66,7 @@ defineProps<{
 </script>
 
 <style scoped lang='scss'>
-.nav-title{
+.nav-title {
   font-size: 15px;
 }
 </style>
