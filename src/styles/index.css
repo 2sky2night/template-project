@@ -32,6 +32,10 @@
   --box-bg-color-2: #f6f7fa;
   /*盒子2鼠标悬浮时的背景颜色*/
   --box-bg-color-hover-2: #eaecf3;
+  /*轮播图dot未被激活时的颜色*/
+  --dot-not-acitve-color:#dadadd79;
+  /*轮播图dot被激活时的颜色*/
+  --dot-acitve-color:#cfcfcf;
 }
 
 * {
