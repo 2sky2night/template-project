@@ -55,11 +55,11 @@ defineOptions({
 }
 
 // 650px以下隐藏整个侧边菜单栏
-@media screen and (max-width:650px) {
-  .sider-container {
-    display: none;
-  }
-}
+// @media screen and (max-width:650px) {
+//   .sider-container {
+//     display: none;
+//   }
+// }
 
 .sider-enter-active {
   animation: siderBar var(--time-normal) 1 ease-in-out;

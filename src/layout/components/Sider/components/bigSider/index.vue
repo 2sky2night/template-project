@@ -53,7 +53,14 @@ defineOptions({
   display: none;
 }
 
-@media screen and (max-width:1200px) and (min-width:650px) {
+// @media screen and (max-width:1200px) and (min-width:650px) {
+//   .big-sider-container-mask {
+//     display: block;
+//   }
+// }
+
+
+@media screen and (max-width:1200px) {
   .big-sider-container-mask {
     display: block;
   }
@@ -61,6 +68,7 @@ defineOptions({
 
 .big-sider-container {
   position: absolute;
+  z-index: 999;
   height: 100%;
   overflow: auto;
   width: var(--sider-width);
