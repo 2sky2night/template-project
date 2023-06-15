@@ -1,7 +1,7 @@
 <template>
   <div class="page home-page">
     <SignBox />
-    <Carousel :height="180" :show-dots="true">
+    <Carousel :height="180" :show-dots="true" :show-btns="false" :autoplay="true" :delay="3000">
       <CarouselItem v-for="item in 10">
         <div class="container">
           <button @click="fun">{{ item }}</button>

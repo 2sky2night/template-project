@@ -8,9 +8,9 @@
 
     </div>
     <div v-if="showDots" class="dots-container">
-      <CarouselDot v-model="currentIndex" :index="item" v-for="   item    in carouselList.length" :key="item" />
+      <CarouselDot v-model="currentIndex" :index="item" v-for="         item          in carouselList.length" :key="item" />
     </div>
-    <div class="carousel-btns">
+    <div class="carousel-btns" v-if="showBtns">
       <div class="carousel-btn" @click="throttlePre">&lt;</div>
       <div class="carousel-btn" @click="throttleNext">></div>
     </div>
@@ -22,16 +22,34 @@
 // 组件
 import CarouselDot from './components/CarouselDot.vue'
 // hooks
-import { ref } from 'vue'
+import { ref, onMounted, nextTick, watch } from 'vue'
 import throttle from '@/utils/tools/throttle'
-import { nextTick } from 'vue';
 
-//当前显示的轮播图索引 0为重复的最后1项 carouselList.length为重复的第一项
+//当前显示的轮播图索引
+// 1--- carousel.length为轮播项的范围，0是追加到最前面的最后一项  carousel.length+1为追加到最后面的第一项
 const currentIndex = ref(1)
 // 轮播图的自定义属性
 const props = defineProps<{
+  /**
+   * 高
+   */
   height: number;
+  /**
+   * 是否显示指示器
+   */
   showDots: boolean;
+  /**
+   * 是否显示上下轮播项按钮
+   */
+  showBtns: boolean;
+  /**
+   * 是否自动播放
+   */
+  autoplay: boolean;
+  /**
+   * 自动播放的延迟时间
+   */
+  delay: number;
 }>()
 // 定义插槽
 const slots = defineSlots<{ default: () => any }>()
@@ -53,12 +71,14 @@ const carouselList: any[] = defaultsList.reduce((list: any, ele: any) => {
 }, [])
 
 
-console.log('轮播项列表：', carouselList)
+// console.log('轮播项列表：', carouselList)
 
 /**
  * 上一张
  */
 function onHandlePre () {
+  // 恢复过渡时间
+  tsTime.value = .3;
   if (currentIndex.value == 1) {
     // 1为临界值 需要特殊处理
     // 先让其正常滑动到 0 也就是展示最后一项
@@ -69,12 +89,11 @@ function onHandlePre () {
       setTimeout(() => {
         tsTime.value = 0;
         currentIndex.value = carouselList.length
+        // 延迟300秒是因为轮播图动画是三秒 需要先移动到0项然后调整过渡时间并立即调整到正常范围的最后一项
       }, 300)
 
     })
   } else {
-    // 恢复过渡时间
-    tsTime.value = .3;
     currentIndex.value--
   }
 }
@@ -83,8 +102,18 @@ function onHandlePre () {
  * 下一张
  */
 function onHandleNext () {
-  if (currentIndex.value === carouselList.length - 1) {
-    currentIndex.value = 0
+  // 恢复过渡时间
+  tsTime.value = .3;
+  if (currentIndex.value === carouselList.length) {
+    // 若当前是正常范围的最后一项 需要另做处理
+    currentIndex.value++
+    nextTick(() => {
+      // 调整过渡时间 立即跳转到正常范围中的第一项
+      setTimeout(() => {
+        tsTime.value = 0;
+        currentIndex.value = 1;
+      }, 300)
+    })
   } else {
     currentIndex.value++
   }
@@ -92,6 +121,15 @@ function onHandleNext () {
 
 const throttleNext = throttle(onHandleNext, 500)
 const throttlePre = throttle(onHandlePre, 500)
+
+// 是否自动播放？
+if (props.autoplay) {
+  onMounted(() => {
+    setInterval(() => {
+      throttleNext()
+    }, props.delay)
+  })
+}
 
 
 defineOptions({
