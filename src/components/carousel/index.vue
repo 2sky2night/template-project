@@ -68,6 +68,9 @@ const carouselList: any[] = defaultsList.reduce((list: any, ele: any) => {
     // 若是通过v-for指令渲染的ele.type则是一个symbol类型 则需要获取所有渲染的子内容并使用组件名是否为Carouselitme的筛选
     ele.children.filter((son: any) => son.type.name === 'CarouselItem').forEach((item: any) => list.push(item))
     return list
+  } else {
+    // 若为其他内容则不需要渲染
+    return list
   }
 }, [])
 
@@ -88,11 +91,11 @@ function onHandlePre () {
       setTimeout(() => {
         tsTime.value = 0;
         currentIndex.value = carouselList.length
-        // 当移动到最后一项后需要让过渡时间恢复 但是必须要用延迟器，而且必须要设置时间为动画效果的时间，否则也会被同步更新，会导致移动到正常范围的最后一项会出现动画效果。
+        // 当移动到最后一项后需要让过渡时间恢复 但是必须要用延迟器，而且必须要设置时间为动画效果的时间??(存疑)，否则也会被同步更新，会导致移动到正常范围的最后一项会出现动画效果。
         nextTick(() => {
           setTimeout(() => {
             tsTime.value = .3
-          }, 300)
+          }, 150)
         })
       }, 300)
 
@@ -118,7 +121,7 @@ function onHandleNext () {
         nextTick(() => {
           setTimeout(() => {
             tsTime.value = .3
-          }, 300)
+          }, 150)
         })
       }, 300)
     })
