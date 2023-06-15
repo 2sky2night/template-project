@@ -20,6 +20,9 @@
 
 <script lang='ts' setup>
 import Btn from '@/components/btn/Btn.vue';
+defineOptions({
+  name:"SignBox"
+})
 </script>
 
 <style scoped lang='scss'>

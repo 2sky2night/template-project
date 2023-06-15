@@ -55,6 +55,8 @@ const useSettingStore = defineStore(
       html.style.setProperty('--mask-color', '#00000052')
       html.style.setProperty('--box-bg-color-1', '#fff')
       html.style.setProperty('--box-bg-color-hover-1', '#f6f7fa')
+      html.style.setProperty('--tabs-color', '#f6f7fa')
+      html.style.setProperty('--tabs-active-color', '#eaecf3')
     }
 
     /**
@@ -70,6 +72,8 @@ const useSettingStore = defineStore(
       html.style.setProperty('--mask-color', '#000000d0')
       html.style.setProperty('--box-bg-color-1', '#17171a')
       html.style.setProperty('--box-bg-color-hover-1', '#2d3035')
+      html.style.setProperty('--tabs-color', '#24262b')
+      html.style.setProperty('--tabs-active-color', '#2d3035')
     }
 
     return {

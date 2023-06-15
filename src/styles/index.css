@@ -36,6 +36,10 @@
   --dot-not-acitve-color:#dadadd79;
   /*轮播图dot被激活时的颜色*/
   --dot-acitve-color:#e7e7e7;
+  /*tabs组件激活前的背景颜色*/
+  --tabs-color:#f6f7fa;
+  /*tabs组件激活后的背景颜色*/
+  --tabs-active-color:#eaecf3;
 }
 
 * {

@@ -3,14 +3,18 @@
     <SignBox />
     <Banner />
     <BigCards />
+    <PayList />
+    <BetRaceList />
   </div>
 </template>
 
 
 <script lang='ts' setup>
-import SignBox from './components/SignBox.vue';
-import Banner from './components/Banner.vue';
-import BigCards from './components/BigCards.vue'
+import SignBox from './components/SignBox/index.vue';
+import Banner from './components/Banner/index.vue';
+import BigCards from './components/BigCards/index.vue'
+import PayList from './components/PayList/index.vue'
+import BetRaceList from './components/BetRaceList/index.vue';
 
 defineOptions({
   name: 'Home'

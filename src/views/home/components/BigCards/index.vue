@@ -30,7 +30,9 @@
 </template>
 
 <script lang='ts' setup>
-
+defineOptions({
+  name:"BigCards"
+})
 </script>
 
 <style scoped lang='scss'>
