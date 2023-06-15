@@ -1,6 +1,8 @@
 <template>
-  <div class="main-container">
-    <RouterView></RouterView>
+  <div class="main-box">
+    <div class="main-container">
+      <RouterView></RouterView>
+    </div>
   </div>
 </template>
 
@@ -11,8 +13,13 @@ defineOptions({
 </script>
 
 <style scoped lang='scss'>
+// 容器
+.main-box{
+}
+// 主要内容
 .main-container {
-  padding: 0 40px;
+  padding:0 40px;
+  padding-bottom: 20px;
   box-sizing: border-box;
 }
 

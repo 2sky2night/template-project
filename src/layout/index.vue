@@ -7,6 +7,7 @@
       </div>
       <div class="main-content">
         <Main />
+        <Footer/>
       </div>
     </div>
   </div>
@@ -16,6 +17,8 @@
 import Header from './components/Header/index.vue'
 import Sider from './components/Sider/index.vue'
 import Main from './components/Main/index.vue'
+import Footer from '@/layout/components/Main/components/Footer/index.vue'
+
 
 defineOptions({
   name: "Layout"

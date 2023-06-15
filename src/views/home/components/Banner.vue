@@ -1,12 +1,12 @@
 <template>
   <div class="banner-container mt-10 mb-10">
-    <Carousel :height="180" :show-dots="true" :show-btns="true" :autoplay="false" :delay="3000">
+    <!-- <Carousel :height="180" :show-dots="true" :show-btns="true" :autoplay="false" :delay="3000">
       <CarouselItem v-for="item in 10">
         <div class="swiper-item">
           <div class="card-item mr-10" v-for="ele in 5">{{ ele }}</div>
         </div>
       </CarouselItem>
-    </Carousel>
+    </Carousel> -->
 
     <!-- <swiper style="height: 180px;width: 100% !important;overflow: hidden;">
       <swiper-slide v-for="  item   in 5">
@@ -16,13 +16,13 @@
       </swiper-slide>
     </swiper> -->
 
-    <!-- <a-carousel style="height: 180px;width: 100%;" :auto-play="true" show-arrow="always" indicator-type="line">
+    <a-carousel style="height: 180px;width: 100%;" :auto-play="true" show-arrow="always" indicator-type="line">
       <a-carousel-item v-for=" item  in 5">
         <div class="swiper-item">
           <div class="card-item mr-10" v-for=" ele  in 5">{{ ele }}</div>
         </div>
       </a-carousel-item>
-    </a-carousel> -->
+    </a-carousel>
   </div>
 </template>
 

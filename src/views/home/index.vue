@@ -19,8 +19,6 @@ defineOptions({
 
 <style scoped lang='scss'>
 .page {
-  height: 200vh;
-
   &.home-page {
     display: flex;
     flex-direction: column;

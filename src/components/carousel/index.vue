@@ -3,12 +3,12 @@
     <div class="carousel-box" :style="{ left: `-${ currentIndex * 100 }%`, transition: `${ tsTime }s` }">
 
       <component :is="carouselList[ carouselList.length - 1 ]"></component>
-      <component v-for="(        item, index        ) in carouselList" :key="index" :is="item" />
+      <component v-for="(item, index) in carouselList" :key="index" :is="item" />
       <component :is="carouselList[ 0 ]"></component>
 
     </div>
     <div v-if="showDots" class="dots-container">
-      <CarouselDot v-model="currentIndex" :index="item" v-for="            item             in carouselList.length"
+      <CarouselDot v-model="currentIndex" :index="item" v-for="item  in carouselList.length"
         :key="item" />
     </div>
     <div class="carousel-btns" v-if="showBtns">
