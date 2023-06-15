@@ -1,0 +1,13 @@
+<template>
+  <div class="bet-ract-list-container">
+
+  </div>
+</template>
+
+<script lang='ts' setup>
+
+</script>
+
+<style scoped lang='scss'>
+
+</style>

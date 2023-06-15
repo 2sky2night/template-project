@@ -5,7 +5,7 @@
       <div class="header-content">
         <Header />
       </div>
-      <div class="main-content">
+      <div ref="mainContent" class="main-content">
         <Main />
         <Footer/>
       </div>
@@ -14,11 +14,23 @@
 </template>
 
 <script lang='ts' setup>
+// 组件
 import Header from './components/Header/index.vue'
 import Sider from './components/Sider/index.vue'
 import Main from './components/Main/index.vue'
 import Footer from '@/layout/components/Main/components/Footer/index.vue'
+// hooks
+import {ref,watch} from 'vue'
+import { useRoute } from 'vue-router'
 
+const route=useRoute()
+const mainContent = ref<HTMLDivElement | null>(null)
+
+watch(()=>route.path, () => {
+  if (mainContent.value!==null) {
+    mainContent.value.scroll({top:0,left:0,behavior:'smooth'})
+  }
+})
 
 defineOptions({
   name: "Layout"
