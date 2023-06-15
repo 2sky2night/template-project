@@ -153,11 +153,14 @@ defineOptions({
   }
 
   .dots-container {
+    background-image: linear-gradient(to top,#0000002d,#00000000);
     position: absolute;
     width: 100%;
     display: flex;
     z-index: 102;
-    bottom: 10px;
+    bottom: 0px;
+    height: 35px;
+    align-items: center;
     justify-content: center;
   }
 

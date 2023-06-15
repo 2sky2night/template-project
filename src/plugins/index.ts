@@ -11,6 +11,8 @@ import ArcoVueIcon from '@arco-design/web-vue/es/icon';
 import '@arco-design/web-vue/dist/arco.css';
 // 主样式
 import '@/styles/index.css'
+// Import Swiper styles
+import 'swiper/css';
 const plugins: Plugin = {
   install (app) {
     app.use(router)

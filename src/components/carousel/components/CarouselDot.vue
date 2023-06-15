@@ -32,9 +32,9 @@ function onHandleClick () {
 
 <style scoped lang='scss'>
 .carousel-dot {
-  height: 10px;
+  height: 8px;
   margin: 0 5px;
-  width: 10px;
+  width: 8px;
   border-radius: 50%;
   background-color: var(--dot-not-acitve-color);
   transition: .3s;
