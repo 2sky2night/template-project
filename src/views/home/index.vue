@@ -1,7 +1,7 @@
 <template>
   <div class="page home-page">
     <SignBox />
-    <Carousel :height="180" :show-dots="true" :show-btns="false" :autoplay="true" :delay="3000">
+    <Carousel :height="180" :show-dots="true" :show-btns="true" :autoplay="false" :delay="3000">
       <CarouselItem v-for="item in 10">
         <div class="swiper-item">
           <div class="card-item mr-10" v-for=" ele  in 5">{{ ele }}</div>
@@ -16,14 +16,14 @@
         </div>
       </swiper-slide>
     </swiper> -->
-    <div class="mb-10 mt-10"></div>
-    <a-carousel style="height: 180px;width: 100%;" :auto-play="true" show-arrow="always" indicator-type="line">
+
+    <!-- <a-carousel style="height: 180px;width: 100%;" :auto-play="true" show-arrow="always" indicator-type="line">
       <a-carousel-item v-for=" item  in 5">
         <div class="swiper-item">
           <div class="card-item mr-10" v-for=" ele  in 5">{{ ele }}</div>
         </div>
       </a-carousel-item>
-    </a-carousel>
+    </a-carousel> -->
 
   </div>
 </template>
@@ -55,7 +55,6 @@ defineOptions({
   .swiper-item {
     height: 100%;
     display: flex;
-    padding: 0 40px;
 
     .card-item {
       flex-grow: 1;
