@@ -4,7 +4,8 @@
       <component :is="icon" :size="iconSize"></component>
     </template>
     <template v-if="title">
-      <span class="ml-10">{{ title }}</span>
+      <span v-if="icon" class="ml-10">{{ title }}</span>
+      <span v-else>{{ title }}</span>
     </template>
   </div>
 </template>
@@ -20,6 +21,7 @@ defineProps<BtnProps>()
   background-color: var(--box-bg-color-1);
   padding: 10px 13px;
   border-radius: 3px;
+
   &:hover {
     background-color: var(--box-bg-color-hover-1);
   }

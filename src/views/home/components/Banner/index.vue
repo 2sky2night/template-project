@@ -39,7 +39,7 @@ defineOptions({
 .swiper-item {
   height: 100%;
   display: flex;
-
+  margin-bottom: 30px;
   .card-item {
     flex-grow: 1;
     background-color: skyblue;

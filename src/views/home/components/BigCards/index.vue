@@ -38,8 +38,7 @@ defineOptions({
 <style scoped lang='scss'>
 .big-cards-container {
   display: flex;
-  margin-bottom: 45px;
-
+  margin: 30px 0;
   .card-container {
     display: flex;
     flex-direction: column;

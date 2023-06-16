@@ -31,7 +31,7 @@ defineOptions({
   display: flex;
   justify-content: center;
   flex-direction: column;
-
+  margin-bottom: 30px;
   .sign-up-box {
     font-size: 20px;
   }

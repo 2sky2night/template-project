@@ -53,7 +53,7 @@ defineOptions({
 
 <style scoped lang='scss'>
 .bet-ract-list-container {
-  margin: 20px 0;
+  margin-bottom: 30px;
   padding: 0 10px;
   box-sizing: border-box;
 

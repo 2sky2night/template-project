@@ -4,7 +4,11 @@
     <Banner />
     <BigCards />
     <PayList />
+    <GameList title="Top Rated Games" />
+    <RecentBigWins />
     <BetRaceList />
+    <BigBanner/>
+    <GameList title="Recommended Games" />
   </div>
 </template>
 
@@ -14,7 +18,10 @@ import SignBox from './components/SignBox/index.vue';
 import Banner from './components/Banner/index.vue';
 import BigCards from './components/BigCards/index.vue'
 import PayList from './components/PayList/index.vue'
+import GameList from './components/GameList/index.vue'
+import RecentBigWins from './components/RecentBigWins/index.vue'
 import BetRaceList from './components/BetRaceList/index.vue';
+import BigBanner from './components/BigBanner/index.vue'
 
 defineOptions({
   name: 'Home'

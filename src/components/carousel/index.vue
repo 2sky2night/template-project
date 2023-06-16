@@ -3,55 +3,35 @@
     <div class="carousel-box" :style="{ left: `-${ currentIndex * 100 }%`, transition: `${ tsTime }s` }">
 
       <component :is="carouselList[ carouselList.length - 1 ]"></component>
-      <component v-for="(item, index) in carouselList" :key="index" :is="item" />
+      <component v-for="( item, index ) in carouselList" :key="index" :is="item" />
       <component :is="carouselList[ 0 ]"></component>
 
     </div>
     <div v-if="showDots" class="dots-container">
-      <CarouselDot v-model="currentIndex" :index="item" v-for="item  in carouselList.length"
-        :key="item" />
+      <CarouselDot v-model="currentIndex" :index="item" v-for=" item   in carouselList.length" :key="item" />
     </div>
     <div class="carousel-btns" v-if="showBtns">
       <div class="carousel-btn" @click="throttlePre">&lt;</div>
       <div class="carousel-btn" @click="throttleNext">></div>
     </div>
   </div>
-  <slot v-if="false"></slot>
+  <slot v-if="false" :index="currentIndex"></slot>
 </template>
 
 <script lang='ts' setup>
 // 组件
 import CarouselDot from './components/CarouselDot.vue'
 // hooks
-import { ref, onMounted, nextTick, watch } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import throttle from '@/utils/tools/throttle'
+// types
+import type {CarouselInstance,CarouselProps} from '@/types/components/carousel'
 
 //当前显示的轮播图索引
 // 1--- carousel.length为轮播项的范围，0是追加到最前面的最后一项  carousel.length+1为追加到最后面的第一项
 const currentIndex = ref(1)
 // 轮播图的自定义属性
-const props = defineProps<{
-  /**
-   * 高
-   */
-  height: number;
-  /**
-   * 是否显示指示器
-   */
-  showDots: boolean;
-  /**
-   * 是否显示上下轮播项按钮
-   */
-  showBtns: boolean;
-  /**
-   * 是否自动播放
-   */
-  autoplay: boolean;
-  /**
-   * 自动播放的延迟时间
-   */
-  delay: number;
-}>()
+const props = defineProps<CarouselProps>()
 // 定义插槽
 const slots = defineSlots<{ default: () => any }>()
 // 获取默认插槽的内容
@@ -142,10 +122,17 @@ if (props.autoplay) {
   })
 }
 
+// 定义暴露出去的方法
+defineExpose<CarouselInstance>({
+  throttleNext,
+  throttlePre
+})
 
 defineOptions({
   name: 'Carousel'
 })
+
+
 
 </script>
 
