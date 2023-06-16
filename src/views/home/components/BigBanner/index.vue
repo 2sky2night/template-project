@@ -75,5 +75,6 @@ defineOptions({
 .swiper-item {
   height: 100%;
   display: flex;
+  background-color: var(--color-bg-2);
 }
 </style>

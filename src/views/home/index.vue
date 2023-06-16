@@ -9,6 +9,7 @@
     <BetRaceList />
     <BigBanner/>
     <GameList title="Recommended Games" />
+    <Info/>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import GameList from './components/GameList/index.vue'
 import RecentBigWins from './components/RecentBigWins/index.vue'
 import BetRaceList from './components/BetRaceList/index.vue';
 import BigBanner from './components/BigBanner/index.vue'
+import Info from './components/Info/index.vue'
 
 defineOptions({
   name: 'Home'
