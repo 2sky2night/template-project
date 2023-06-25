@@ -17,7 +17,17 @@ export const initRoutes: RouteRecordRaw[] = [
     component: () => import('@/views/sports/index.vue'),
     meta: {
       title: 'sports',
-      icon: 'icon-folder',
+      icon: 'icon-at',
+      level: 1
+    }
+  },
+  {
+    path: '/game',
+    name: 'game',
+    component: () => import('@/views/game/index.vue'),
+    meta: {
+      title: 'game',
+      icon: 'icon-code',
       level: 1
     }
   },
@@ -104,7 +114,7 @@ export const initRoutes: RouteRecordRaw[] = [
     component: () => import('@/views/blog/index.vue'),
     meta: {
       title: 'blog',
-      icon: 'icon-folder',
+      icon: 'icon-launch',
       level: 1
     }
   },

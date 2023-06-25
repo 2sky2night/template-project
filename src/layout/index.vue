@@ -56,7 +56,7 @@ defineOptions({
     .main-content {
       height: calc(100% - var(--header-height));
       overflow: auto;
-
+      background-color: var(--color-bg-2);
       // 隐藏滚动条
       &::-webkit-scrollbar {
         width: 0;

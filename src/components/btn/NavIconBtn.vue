@@ -59,7 +59,7 @@ const isActive = computed(() => {
     pointer-events: none;
     opacity: 0;
     transition: var(--time-normal);
-
+    z-index: 999;
     &::after {
       top: 50%;
       transform: translateY(-50%) rotate(45deg);

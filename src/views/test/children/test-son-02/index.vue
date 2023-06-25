@@ -1,6 +1,7 @@
 <template>
   <div>
     test-son-02
+    <RouterView></RouterView>
   </div>
 </template>
 

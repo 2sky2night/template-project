@@ -3,11 +3,9 @@
     <Tabs @change="onHandleChangeTab" style="margin-bottom: 20px;" v-model="currentKey" :list="tabsList"
       :font-size="15" />
     <div class="container">
-      <TransitionGroup name="move">
-        <Bets key="1" v-if="currentKey === 1" />
-        <Bets key="2" v-if="currentKey === 2" />
-        <Bets key="3" v-if="currentKey === 3" />
-      </TransitionGroup>
+      <Bets  v-if="currentKey === 1" />
+      <Bets  v-if="currentKey === 2" />
+      <Bets  v-if="currentKey === 3" />
     </div>
   </div>
 </template>
@@ -62,22 +60,5 @@ defineOptions({
   }
 }
 
-.move-enter-active {
-  animation: move .3s 1 ease-in-out;
-}
 
-@keyframes move {
-
-  from {
-    transform: translateY(10px);
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-  }
-
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
 </style>

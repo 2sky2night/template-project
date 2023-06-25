@@ -38,6 +38,7 @@ defineOptions({
   padding-top: 0;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-bg-1);
 }
 
 // 1690px以上 main居中显示
