@@ -2,7 +2,7 @@
   <div class="panel-title-container">
     <div class="left-container">
       <slot name="left">
-        <span class="title">{{ title }}</span>
+        <span :style="{fontSize:fontSize+'px'}">{{ title }}</span>
       </slot>
     </div>
     <div class="right-container">
@@ -14,7 +14,10 @@
 <script lang='ts' setup>
 import { PanelTitleProps } from '@/types/components/title'
 
-defineProps<PanelTitleProps>()
+withDefaults(defineProps<PanelTitleProps>(), {
+  title: '标题',
+  fontSize:22
+})
 defineSlots<{
   left?: () => any;
   right?: () => any;
@@ -24,13 +27,9 @@ defineSlots<{
 <style scoped lang='scss'>
 .panel-title-container {
   display: flex;
-  padding: 10px 0;
+  align-items: center;
+  padding: 20px 0;
+  height: 35px;
   justify-content: space-between;
-
-  .left-container {
-    .title {
-      font-size: 22px;
-    }
-  }
 }
 </style>

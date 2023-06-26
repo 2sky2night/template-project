@@ -85,7 +85,7 @@ defineOptions({
 
   .game-tools {
     height: 65px;
-    background-color: var(--box-bg-color-2);
+    background-color: var(--box-bg-color-1);
     display: flex;
     align-items: center;
     justify-content: space-between;

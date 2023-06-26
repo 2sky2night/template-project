@@ -2,7 +2,7 @@
   <div class="page">
     <Title />
     <GameScreen />
-    <Panel />
+    <Panel :title="gameInfo.gameName" />
   </div>
 </template>
 
@@ -10,6 +10,12 @@
 import Title from './components/Title/index.vue'
 import GameScreen from './components/GameScreen/index.vue'
 import Panel from './components/Panel/index.vue'
+import { reactive } from 'vue';
+
+const gameInfo = reactive({
+  gameName:'Sweet Bonanza'
+})
+
 defineOptions({
   name: 'Game'
 })
