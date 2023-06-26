@@ -1,6 +1,6 @@
 <template>
-  <div class="sweet-bonanza-container">
-    <div class="title">Lastest bet & Race</div>
+  <div class="bet-race-container">
+    <PanelTitle title="Lastest bet & Race" />
     <Tabs style="margin-bottom: 20px;" :list="list" v-model="currentKey" :font-size="13" />
     <AllBets v-if="currentKey === 1" />
     <MyBets v-if="currentKey === 2" />
@@ -12,6 +12,7 @@
 import Tabs from '@/components/tabs/index.vue'
 import AllBets from './components/AllBets.vue';
 import MyBets from './components/MyBets.vue'
+import PanelTitle from '@/components/title/PanelTitle.vue';
 // types
 import type { TabsItem } from '@/types/components/tabs';
 // hooks
@@ -25,31 +26,18 @@ const list = reactive<TabsItem[]>([
   {
     title: 'My Bets',
     key: 2
-  },
-  {
-    title: 'High rollers',
-    key: 3
-  },
-  {
-    title: 'Wager contest',
-    key: 4
   }
 ])
 const currentKey = ref(list[ 0 ].key)
 
 defineOptions({
-  name: 'SweetBonanza'
+  name: 'BetRace'
 })
 </script>
 
 <style scoped lang='scss'>
-.sweet-bonanza-container {
+.bet-race-container {
   background-color: var(--color-bg-1);
   padding: 20px;
-
-  .title {
-    margin: 10px 0;
-    font-size: 20px;
-  }
 }
 </style>

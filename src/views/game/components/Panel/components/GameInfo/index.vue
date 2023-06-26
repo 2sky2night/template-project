@@ -1,31 +1,19 @@
 <template>
-  <div class="page home-page">
-    <SignBox />
-    <Banner />
-    <BigCards />
-    <PayList />
-    <GameList style="margin-bottom: 30px;" title="Top Rated Games" :lists="lists" />
-    <RecentBigWins />
-    <BetRaceList />
-    <BigBanner/>
-    <GameList style="margin-bottom: 30px;" title="Recommended Games" :lists="lists" />
-    <Info/>
+  <div class="game-info-container">
+    <BetRace/>
+    <GameList class="mb-10 mt-10" :lists="lists" title="Related Games" />
+    <Provider/>
   </div>
 </template>
 
-
 <script lang='ts' setup>
-import SignBox from './components/SignBox/index.vue';
-import Banner from './components/Banner/index.vue';
-import BigCards from './components/BigCards/index.vue'
-import PayList from './components/PayList/index.vue'
-import RecentBigWins from './components/RecentBigWins/index.vue'
-import BetRaceList from './components/BetRaceList/index.vue';
-import BigBanner from './components/BigBanner/index.vue'
-import Info from './components/Info/index.vue'
+// components
+import BetRace from './components/BetRace/index.vue'
 import GameList from '@/components/list/GameList.vue'
+import Provider from './components/Provider/index.vue'
+import type GameCardProps from '@/types/components/card/GameCard';
 
-const lists = [
+const lists: GameCardProps[][] = [
   [
     {
       title: 'Wazdan',
@@ -87,16 +75,14 @@ const lists = [
     }
   ],
 ]
+
 defineOptions({
-  name: 'Home'
+  name: 'GameInfo'
 })
 </script>
 
 <style scoped lang='scss'>
-.page {
-  &.home-page {
-    display: flex;
-    flex-direction: column;
-  }
+.game-info-container{
+
 }
 </style>

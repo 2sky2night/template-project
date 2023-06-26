@@ -18,7 +18,7 @@
 import Header from './components/Header/index.vue'
 import Sider from './components/Sider/index.vue'
 import Main from './components/Main/index.vue'
-import Footer from '@/layout/components/Main/components/Footer/index.vue'
+import Footer from './components/Footer/index.vue'
 // hooks
 import {ref,watch} from 'vue'
 import { useRoute } from 'vue-router'

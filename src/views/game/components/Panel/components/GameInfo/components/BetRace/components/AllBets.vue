@@ -1,15 +1,12 @@
 <template>
-  <a-table :columns="columns" :data="data" :row-selection="rowSelection" />
+  <a-table :bordered="false" :columns="columns" :data="data" />
 </template>
 
-<script>
+<script lang="ts">
 import { reactive } from 'vue';
 
 export default {
   setup() {
-    const rowSelection = {
-      type: 'radio'
-    };
     const columns = [
       {
         title: 'Name',
@@ -27,7 +24,7 @@ export default {
         title: 'Email',
         dataIndex: 'email',
       },
-    ]
+    ];
     const data = reactive([{
       key: '1',
       name: 'Jane Doe',
@@ -61,7 +58,6 @@ export default {
     }]);
 
     return {
-      rowSelection,
       columns,
       data
     }

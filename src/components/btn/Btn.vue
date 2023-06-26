@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-container">
+  <div class="btn-container" :style="{fontSize:fontSize+'px'}">
     <template v-if="icon">
       <component :is="icon" :size="iconSize"></component>
     </template>
@@ -12,7 +12,7 @@
 
 <script lang='ts' setup>
 import BtnProps from '@/types/components/btn/Btn';
-defineProps<BtnProps>()
+withDefaults(defineProps<BtnProps>(),{fontSize:13})
 </script>
 
 <style scoped lang='scss'>

@@ -29,7 +29,7 @@ defineOptions({
 <style scoped lang='scss'>
 // 容器
 .footer-box {
-  background-color: var(--color-bg-2);
+  background-color: var(--color-bg-1);
 }
 
 // 主要内容
@@ -38,7 +38,6 @@ defineOptions({
   padding-top: 0;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg-1);
 }
 
 // 1690px以上 main居中显示

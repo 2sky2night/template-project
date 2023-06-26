@@ -2,9 +2,8 @@
   <div class="panel-container">
     <Tabs style="margin: 30px 0;" v-model="currentKey" :list="list" :font-size="15" />
     <div class="panel-content">
-      <SweetBonanza v-if="currentKey===1" />
-      <SweetBonanza v-if="currentKey===2" />
-      <SweetBonanza v-if="currentKey===3" />
+      <GameInfo v-if="currentKey===1" />
+      <Description v-if="currentKey===2" />
     </div>
   </div>
 </template>
@@ -12,7 +11,8 @@
 <script lang='ts' setup>
 // components
 import Tabs from '@/components/tabs/index.vue'
-import SweetBonanza from './components/SweetBonanza/index.vue'
+import GameInfo from './components/GameInfo/index.vue'
+import Description from './components/Description/index.vue'
 // types
 import type { TabsItem } from '@/types/components/tabs';
 // hooks
@@ -32,6 +32,7 @@ const list = reactive<TabsItem[]>([
     key: 3
   }
 ])
+
 const currentKey = ref(list[ 0 ].key)
 
 defineOptions({
