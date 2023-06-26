@@ -17,7 +17,8 @@
   --time-normal: .3s;
   --time-middle: .5s;
   --time-lower: 1s;
-
+  /*背景颜色*/
+  --main-bg-color:#f6f7fa;
   /*阴影颜色*/
   --shadow-color: #ededed;
   /*边框颜色*/

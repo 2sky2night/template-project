@@ -26,7 +26,7 @@ defineOptions({
 .deposit-container {
   display: flex;
   margin: 30px 0;
-  background-color: var(--color-bg-2);
+  background-color: var(--color-bg-1);
   padding: 20px 10px;
 
   .pay-list {

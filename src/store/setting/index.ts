@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, watch } from 'vue'
+import {LightCSSVarList,DarkCSSVarList} from '@/config/CSSVars'
 
 const useSettingStore = defineStore(
   'theme',
@@ -48,15 +49,9 @@ const useSettingStore = defineStore(
     function setLightCSSVar () {
       const html = document.documentElement
       // 设置 css 变量
-      html.style.setProperty('--shadow-color', '#ededed')
-      html.style.setProperty('--border-color', '#eee')
-      html.style.setProperty('--box-bg-color-2', '#f6f7fa')
-      html.style.setProperty('--box-bg-color-hover-2', '#eaecf3')
-      html.style.setProperty('--mask-color', '#00000052')
-      html.style.setProperty('--box-bg-color-1', '#fff')
-      html.style.setProperty('--box-bg-color-hover-1', '#f6f7fa')
-      html.style.setProperty('--tabs-color', '#f6f7fa')
-      html.style.setProperty('--tabs-active-color', '#eaecf3')
+      Object.entries(LightCSSVarList).forEach(([key, value]) => {
+        html.style.setProperty(key,value)
+      })
     }
 
     /**
@@ -65,15 +60,9 @@ const useSettingStore = defineStore(
     function setDarkCSSVar () {
       const html = document.documentElement
       // 设置 css 变量
-      html.style.setProperty('--shadow-color', '#000')
-      html.style.setProperty('--border-color', '#2a2a2b')
-      html.style.setProperty('--box-bg-color-2', '#2a2a2b')
-      html.style.setProperty('--box-bg-color-hover-2', '#313132')
-      html.style.setProperty('--mask-color', '#000000d0')
-      html.style.setProperty('--box-bg-color-1', '#17171a')
-      html.style.setProperty('--box-bg-color-hover-1', '#2d3035')
-      html.style.setProperty('--tabs-color', '#24262b')
-      html.style.setProperty('--tabs-active-color', '#2d3035')
+      Object.entries(DarkCSSVarList).forEach(([key, value]) => {
+        html.style.setProperty(key,value)
+      })
     }
 
     return {
